@@ -12,9 +12,11 @@ if (file_exists($autoloadFile)) {
 
 use Symfony\Component\Console\Application;
 use PrestaShop\CodingStandards\Command\CsFixerInitCommand;
+use PrestaShop\CodingStandards\Command\InitCommand;
 use PrestaShop\CodingStandards\Command\PhpStanInitCommand;
 
 $app = new Application();
+$app->add(new InitCommand());
 $app->add(new CsFixerInitCommand());
 $app->add(new PhpStanInitCommand());
 $app->run();
